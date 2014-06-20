@@ -32,6 +32,11 @@ app.config(function($routeProvider, $locationProvider){
             controller: 'CourseDetailsCtrl'
         })
 
+        .when('/users/:id', {
+            templateUrl: '/partials/admin/user',
+            controller: 'UserDetailsCtrl'
+        })
+
         .when('/signup', {
             templateUrl: '/partials/account/signup',
             controller: 'SignUpCtrl'
@@ -55,12 +60,11 @@ app.config(function($routeProvider, $locationProvider){
             resolve: routeUserChecks.authenticated
         })
 
-        .when('/chat/:id', {
-            templateUrl: '/partials/account/chat',
+        .when('/linker', {
+            templateUrl: '/partials/account/linker',
+            controller: 'LinkerCtrl',
             resolve: routeUserChecks.authenticated
         })
-
-
 });
 
 app.run(function($rootScope, $location){

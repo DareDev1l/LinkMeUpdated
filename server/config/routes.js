@@ -5,8 +5,10 @@ var auth = require('./auth'),
 module.exports = function(app){
 
     app.get('/api/users', auth.isAuthenticated, controllers.users.getAllUsers);
+    app.get('/api/users/:id', controllers.users.getUserById);
     app.post('/api/users', controllers.users.createUser);
     app.put('/api/users', auth.isAuthenticated, controllers.users.updateUser);
+
 
     app.get('/api/courses', controllers.courses.getAllCourses);
     app.get('/api/courses/:id', controllers.courses.getCourseById);

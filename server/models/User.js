@@ -1,12 +1,17 @@
 var mongoose = require('mongoose'),
     encryption = require('../utilities/encryption');
 
+var post = mongoose.Schema({
+    date: {type: Date, default: Date.now()},
+    body: {type: String}
+});
 
 var userSchema = mongoose.Schema({
     username: {type: String, require: '{PATH} is required' , unique: true},
     firstName: {type: String, require: '{PATH} is required'},
     lastName: {type: String, require: '{PATH} is required'},
     profilePic: {type: String, default: 'imgs/default.jpg'},
+    activity: [post],
     salt: String,
     hashPass: String,
     roles: [String]

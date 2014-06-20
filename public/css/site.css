@@ -38,15 +38,44 @@ footer p {
 .oneUser {
   background-color: #f6f6f6;
 }
-#search-btn {
-  font-size: 25px;
-  position: absolute;
-  top: 15px;
-  right: 120px;
-}
 #search-btn:hover {
   background-color: #06f;
 }
 ul.nav.navbar-nav li:hover {
   background-color: #06f;
+}
+.userContainer {
+  background-color: #eee;
+  font-size: 20px;
+  font-family: "Tahoma", Tahoma, Geneva, sans-serif;
+  margin-left: 15px;
+  width: 1366px;
+  height: 1280px;
+}
+.info {
+  background-color: #69f;
+}
+.details {
+  background-color: #fff;
+}
+#userNames {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+#post-form {
+  resize: none;
+}
+#post-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.profileImg {
+  display: inline-block;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  margin-top: 7px;
+}
+.profileData {
+  display: inline-block;
+  vertical-align: top;
 }

@@ -1,0 +1,20 @@
+.userContainer
+    .col-md-2
+        img(src='{{ user.profilePic }}', width="180px", height="210px")
+        #userNames {{user.firstName}} {{user.lastName}}
+        br
+        br
+        .panel.panel-primary
+            .panel-heading.text-center Friends
+            .panel-body
+
+    .col-md-5
+        .panel.panel-primary
+            .panel-heading.text-center Activity
+            .panel-body
+
+
+    .col-md-4
+        .panel.panel-info
+            .panel-heading.text-center Photos
+            .panel-body
