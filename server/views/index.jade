@@ -1,0 +1,23 @@
+extends includes/layout
+block main-content
+    header.nav.navbar-inverse.navbar-fixed-top(ng-controller="NavbarCtrl")
+        .container
+            .navbar-header
+                a.navbar-brand(href="#/") LinkMe
+            .navbar-collapse.collapse
+                ul.nav.navbar-nav
+                    li(ng-show="identity.isAuthenticated()")
+                        a(href="#/courses") Articles
+                    li(ng-show="identity.isAuthenticated()")
+                        a(href="#/users") People
+                .col-md-4#search(ng-show="identity.isAuthenticated()")
+                    input.form-control(type="text" placeholder="Search", ng-model="search")
+                .col-md-1
+                    span.glyphicon.glyphicon-search#search-btn(ng-show="identity.isAuthenticated()")
+                div(ng-include="'partials/account/login'")
+    section.container
+    div(ng-view)
+
+    footer
+        p.text-center
+            | LinkMe 2014

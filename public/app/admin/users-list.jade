@@ -1,0 +1,15 @@
+.container
+    .row
+        .col-md-4
+            input.form-control(type="text" placeholder="Search", ng-model="searchUsers")
+    br
+    ul#nolist
+        li(ng-repeat="user in users | filter: searchUsers")
+            div.oneUser
+                .row
+                    .col-md-10
+                        img(src="{{ user.profilePic }}")
+                        h4 {{ user.firstName }}  {{ user.lastName }}
+                    .col-md-2
+                        a.button.btn.btn-primary.chat-btn(href="#/create") Chat
+            br
