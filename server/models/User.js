@@ -1,17 +1,16 @@
 var mongoose = require('mongoose'),
     encryption = require('../utilities/encryption');
 
-var post = mongoose.Schema({
-    date: {type: Date, default: Date.now()},
-    body: {type: String}
-});
+/*var post = mongoose.Schema({
+    body: {type: String, default: 'From post'}
+});*/
 
 var userSchema = mongoose.Schema({
     username: {type: String, require: '{PATH} is required' , unique: true},
     firstName: {type: String, require: '{PATH} is required'},
     lastName: {type: String, require: '{PATH} is required'},
     profilePic: {type: String, default: 'imgs/default.jpg'},
-    activity: {type: [post], default: [{body: 'LinkMe is an awesome site!!'}]},
+    activity: String,
     salt: String,
     hashPass: String,
     roles: [String]
