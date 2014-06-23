@@ -30,15 +30,5 @@ module.exports = function(app){
 
     app.get('*', function(req,res){
         res.render('index', {currentUser: req.user});
-    })
-
-    app.get('/create', function(req,res){
-
-        // Generate unique id for the room
-        var id = Math.round((Math.random() * 1000000));
-        console.log('hey');
-
-        // Redirect to the random room
-        res.redirect('/chat/33');
     });
-}
+};

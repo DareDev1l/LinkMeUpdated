@@ -32,8 +32,6 @@ footer p {
 }
 .chat-btn {
   width: 100px;
-  position: absolute;
-  top: 20px;
 }
 .oneUser {
   background-color: #f6f6f6;
@@ -78,4 +76,11 @@ ul.nav.navbar-nav li:hover {
 .profileData {
   display: inline-block;
   vertical-align: top;
+}
+.fixedSizePic {
+  width: 180px;
+  height: 210px;
+}
+.noListStyle {
+  list-style-type: none;
 }

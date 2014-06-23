@@ -1,6 +1,6 @@
 .userContainer
     .col-md-2
-        img(src='{{ user.profilePic }}', width="180px", height="210px")
+        img.fixedSizePic(src='{{ user.profilePic }}', width="180px", height="210px")
         #userNames {{user.firstName}} {{user.lastName}}
         br
         br
@@ -12,6 +12,7 @@
         .panel.panel-primary
             .panel-heading.text-center Activity
             .panel-body
+                | {{ user.activity }}
 
 
     .col-md-4

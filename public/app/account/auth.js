@@ -32,15 +32,12 @@ app.factory('auth', function($q,$http, identity, UsersResource){
         post: function(user){
             var deferred = $q.defer();
 
-            var updatedUser = new UsersResource(user);
-            updatedUser._id = identity.currentUser._id;
-
-            updatedUser.$update().then(function(){
+            UsersResource.query().then(function(){
                 identity.currentUser.activity = updatedUser.activity;
                 deferred.resolve();
             }, function(response){
                 deferred.reject(response);
-            });
+            });;
 
             return deferred.promise;
         },
