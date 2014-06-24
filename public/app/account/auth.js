@@ -29,10 +29,16 @@ app.factory('auth', function($q,$http,$location, identity, UsersResource, Activi
             return deferred.promise;
         },
         addpost: function(activity){
+
+            // add ,profilePic, firstName, lastName in parameters when removing comments
             var deferred = $q.defer();
 
-            var activity = new ActivityResource(activity);
-            activity.$save().then(function(){
+            var post = new ActivityResource(activity);
+           // post.firstName = firstName;
+            /*
+            post.firstName = firstName;
+            post.lastName = lastName; */
+            post.$save().then(function(){
                 deferred.resolve();
             }, function(response){
                 deferred.reject(response);

@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
 
 var activitySchema = mongoose.Schema({
-    userId: String,
+    profilePic: {type: String},
+    firstName: {type: String, default: 'FirstName'},
+    lastName: {type: String, default: 'LastName'},
     body: String,
     date: {type: Date, default: Date.now()}
 });

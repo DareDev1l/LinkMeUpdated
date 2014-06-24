@@ -1,13 +1,29 @@
 .userContainer
-    .col-md-4
-        img.profileImg(src="{{ identity.currentUser.profilePic }}" , width="50px" , height="50px")
-        .profileData {{ identity.currentUser.firstName }} {{ identity.currentUser.lastName }}
-        textarea#post-form.form-control(rows="4" , placeholder="Share to world of LinkMe", ng-model='activity.body')
-        button#post-btn.btn.btn-primary.pull-right(ng-click="addpost(activity)") Link
-        textarea(ng-model="activity.userId") {{ identity.currentUser.firstName }}
-        br
-        br
-        br
-        ul.noListStyle
-            li(ng-repeat="post in activity | orderBy: '-date'")
-                .postBody {{ post.body }} on {{ post.date | date: 'dd MMM h:mm'}} from {{ post.userId }}
+    .row
+        .col-md-4
+            img.profileImg(src="{{ identity.currentUser.profilePic }}" , width="50px" , height="50px")
+            .profileData {{ identity.currentUser.firstName }} {{ identity.currentUser.lastName }}
+            textarea.post-form.form-control(rows="4" , placeholder="Share to world of LinkMe", ng-model='activity.body')
+            br
+            .valid Validate you are not a bot:
+            form(name="DataForm")
+                select.form-control(ng-model="activity.firstName" , required)
+                    option(disabled hidden value='')
+                    option(value="{{ identity.currentUser.firstName }}", name = "def") {{ identity.currentUser.firstName }}
+                select.form-control(ng-model="activity.lastName", required)
+                    option(disabled hidden value='')
+                    option(value="{{ identity.currentUser.lastName }}", selected="selected") {{ identity.currentUser.lastName }}
+                select.form-control(ng-model="activity.profilePic", required)
+                    option(disabled hidden value='')
+                    option(value="{{ identity.currentUser.profilePic }}") {{ identity.currentUser.profilePic }}
+            a#post-btn.btn.btn-primary.pull-right(ng-click="addpost(activity)", href="/", ng-disabled="DataForm.$invalid") Link
+
+        .col-md-2
+
+        .col-md-5
+            ul.noListStyle
+                li(ng-repeat="post in activity | orderBy: '-_id'")
+                    .wrapPost
+                        img.profileImg(src="{{ post.profilePic }}" , width="50px" , height="50px")
+                        .profileData {{ post.firstName }} {{ post.lastName }} at {{ post.date | date: 'dd MMM h:mm'}}
+                        .profileMsg {{ post.body }}

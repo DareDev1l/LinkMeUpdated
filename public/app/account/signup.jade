@@ -26,19 +26,19 @@
                 .form-group
                     label.col-md-2.control-label(for="bornDate") Date of birth
                     .col-md-10
-                        input.form-control(type="text", placeholder="mm/dd/yyyy", ng-model="user.bornDate")
+                        input.form-control(type="text", placeholder="mm/dd/yyyy", ng-model="user.bornDate", required)
                 .form-group
                     label.col-md-2.control-label(for="bornPlace") Place of birth
                     .col-md-10
-                        input.form-control(type="text", ng-model="user.bornPlace")
+                        input.form-control(type="text", ng-model="user.bornPlace", placeholder="Where are you born?", required)
                 .form-group
                     label.col-md-2.control-label(for="job") Working as
                     .col-md-10
-                        input.form-control(type="text", placeholder="Your job", ng-model="user.job")
+                        input.form-control(type="text", placeholder="Your job", ng-model="user.job", required)
                 .form-group
                     label.col-md-2.control-label(for="livePlace") Lives in
                     .col-md-10
-                        input.form-control(type="text", placeholder="Where do you live?", ng-model="user.livePlace")
+                        input.form-control(type="text", placeholder="Where do you live?", ng-model="user.livePlace", required)
                 .pull-right
                     button.btn.btn-primary(ng-click="signup(user)", ng-disabled="signUpForm.$invalid") Register
                     a.btn.btn-primary#cancel(href="#/") Cancel
