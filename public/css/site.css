@@ -95,3 +95,84 @@ ul.nav.navbar-nav li:hover {
   margin: 20px;
   background-color: #f8f8f8;
 }
+@media (max-width: 980px) {
+  .friendsBlock {
+    width: 820px;
+  }
+  .infoBlock {
+    width: 850px;
+  }
+  .leftPannel {
+    width: 800px;
+  }
+  .rightPannel {
+    width: 800px;
+    margin-left: 0px;
+    margin-top: 50px;
+    padding: 5px;
+    float: left;
+  }
+}
+@media (max-width: 720px) {
+  .friendsBlock {
+    width: 520px;
+  }
+  .infoBlock {
+    width: 550px;
+  }
+  .photosBlock {
+    width: 550px;
+  }
+  .leftPannel {
+    width: 600px;
+  }
+  .rightPannel {
+    width: 600px;
+    margin-left: 0px;
+    margin-top: 50px;
+    padding: 5px;
+    float: left;
+  }
+}
+@media (max-width: 540px) {
+  .friendsBlock {
+    width: 420px;
+  }
+  .infoBlock {
+    width: 450px;
+  }
+  .photosBlock {
+    width: 450px;
+  }
+  .leftPannel {
+    width: 470px;
+  }
+  .rightPannel {
+    width: 470px;
+    margin-left: 0px;
+    margin-top: 50px;
+    padding: 5px;
+    float: left;
+  }
+}
+@media (max-width: 360px) {
+  .friendsBlock {
+    width: 220px;
+  }
+  .infoBlock {
+    width: 250px;
+  }
+  .photosBlock {
+    width: 250px;
+  }
+  .leftPannel {
+    width: 200px;
+  }
+  .rightPannel {
+    width: 280px;
+    margin-left: 0px;
+    margin-top: 50px;
+    padding: 5px;
+    float: left;
+  }
+}
