@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
     user = require('../models/User'),
+    activity = require('../models/Activity'),
     course = require('../models/Course');
 
 module.exports = function(config) {

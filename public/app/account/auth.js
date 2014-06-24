@@ -1,4 +1,4 @@
-app.factory('auth', function($q,$http, identity, UsersResource){
+app.factory('auth', function($q,$http,$location, identity, UsersResource, ActivityResource){
     return {
         signup: function(user){
             var deferred = $q.defer();
@@ -21,7 +21,6 @@ app.factory('auth', function($q,$http, identity, UsersResource){
             updatedUser.$update().then(function(){
                 identity.currentUser.firstName = updatedUser.firstName;
                 identity.currentUser.lastName = updatedUser.lastName;
-                identity.currentUser.profilePic = updatedUser.profilePic;
                 deferred.resolve();
             }, function(response){
                 deferred.reject(response);
@@ -29,16 +28,15 @@ app.factory('auth', function($q,$http, identity, UsersResource){
 
             return deferred.promise;
         },
-        post: function(user){
+        addpost: function(activity){
             var deferred = $q.defer();
 
-            UsersResource.query().then(function(){
-                identity.currentUser.activity = updatedUser.activity;
+            var activity = new ActivityResource(activity);
+            activity.$save().then(function(){
                 deferred.resolve();
             }, function(response){
                 deferred.reject(response);
-            });;
-
+            });
             return deferred.promise;
         },
         login: function(user){

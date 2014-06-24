@@ -10,9 +10,15 @@
 
     .col-md-5
         .panel.panel-primary
-            .panel-heading.text-center Activity
+            .panel-heading.text-center Personal Information
             .panel-body
-                | {{ user.activity }}
+                .bornDate Born:
+                    | {{ user.bornDate | date }} in {{ user.bornPlace }}
+                .livePlace Lives in:
+                    | {{ user.livePlace }}
+                .job Job:
+                    | {{ user.job }}
+
 
 
     .col-md-4
