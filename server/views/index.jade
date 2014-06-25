@@ -16,6 +16,8 @@ block main-content
                         a(href="#/users") People
                     li(ng-show="identity.isAuthenticated()")
                         a(href="#/linker") Linker
+                    li(ng-show="identity.isAuthenticated()")
+                        a(href="#/support") Support
                 div(ng-include="'partials/account/login'")
     section.container
     div(ng-view)

@@ -50,6 +50,11 @@ ul.nav.navbar-nav li:hover {
   width: 1366px;
   height: 3000px;
 }
+.suppContainer {
+  width: 1196px;
+  height: 648px;
+  background-color: #eee;
+}
 .info {
   background-color: #69f;
 }
@@ -175,4 +180,26 @@ ul.nav.navbar-nav li:hover {
     padding: 5px;
     float: left;
   }
+}
+.changedPanel {
+  padding: 0px;
+  margin: 0px;
+}
+.tabs {
+  margin: 0px;
+  padding: 0px;
+}
+.tabs:hover {
+  background-color: #e8e8e8;
+}
+canvas {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-image: url("background.jpg");
+}
+#the-plane {
+  display: none;
 }
