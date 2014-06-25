@@ -3,7 +3,11 @@
         .col-md-4.leftPannel
             img.profileImg(src="{{ identity.currentUser.profilePic }}" , width="50px" , height="50px")
             .profileData {{ identity.currentUser.firstName }} {{ identity.currentUser.lastName }}
+<<<<<<< HEAD
             textarea.post-form.form-control(rows="4" , placeholder="Share to world of LinkMe", ng-model='activity.body', required)
+=======
+            textarea.post-form.form-control(rows="4" , placeholder="Share to world of LinkMe", ng-model='activity.body')
+>>>>>>> 15bfa13cd82dd59ed0ede41906c8acd133eb75c8
             br
             .valid Validate you are not a bot
             br

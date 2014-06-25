@@ -50,11 +50,14 @@ ul.nav.navbar-nav li:hover {
   width: 1366px;
   height: 3000px;
 }
+<<<<<<< HEAD
 .suppContainer {
   width: 1196px;
   height: 648px;
   background-color: #eee;
 }
+=======
+>>>>>>> 15bfa13cd82dd59ed0ede41906c8acd133eb75c8
 .info {
   background-color: #69f;
 }
@@ -181,6 +184,7 @@ ul.nav.navbar-nav li:hover {
     float: left;
   }
 }
+<<<<<<< HEAD
 .changedPanel {
   padding: 0px;
   margin: 0px;
@@ -203,3 +207,5 @@ canvas {
 #the-plane {
   display: none;
 }
+=======
+>>>>>>> 15bfa13cd82dd59ed0ede41906c8acd133eb75c8
