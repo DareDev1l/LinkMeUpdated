@@ -9,7 +9,6 @@ script.
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
-    var image = document.getElementById('userImg').src;
         socket.on('message', function (data) {
         if(data.message) {
             messages.push(data.message);
@@ -25,4 +24,5 @@ script.
         sendButton.onclick = function() {
         var text = field.value;
         socket.emit('send', { message: text });
+        field.value = '';
     };
