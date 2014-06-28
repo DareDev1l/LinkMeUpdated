@@ -15,7 +15,7 @@ script.
             messages.push(data.message);
             var html = '';
             for(var i=0; i<messages.length; i++) {
-                html += '<img src="' + image + '" width="50x" height="50px"> ' + messages[i] + '<br />';
+                html += messages[i] + '<br />';
             }
             $('#content').prepend(html);
         } else {
