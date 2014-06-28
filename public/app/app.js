@@ -70,6 +70,11 @@ app.config(function($routeProvider, $locationProvider){
             controller: 'SupportCtrl',
             resolve: routeUserChecks.authenticated
         })
+        .when('/chat', {
+            templateUrl: '/partials/account/chat',
+            controller: 'ChatCtrl',
+            resolve: routeUserChecks.authenticated
+        })
 });
 
 app.run(function($rootScope, $location){

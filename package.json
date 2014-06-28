@@ -22,7 +22,7 @@
     "passport-local": "^1.0.0",
     "cookie-parser": "^1.1.0",
     "express-session": "^1.2.1",
-    "socket.io": "^1.0.4",
+    "socket.io": "^1.0.6",
     "connect": "^2.19.5",
     "session-mongoose": "^0.4.1"
   }

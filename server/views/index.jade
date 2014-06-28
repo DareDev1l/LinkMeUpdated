@@ -19,6 +19,9 @@ block main-content
                     li(ng-show="identity.isAuthenticated()")
                         a(href="#/support") Support
                 div(ng-include="'partials/account/login'")
+                button.chat.dropdown-toggle(ng-show="identity.isAuthenticated()", data-toggle='dropdown', id="chatLab") Chat
+                ul.dropdown-menu(aria-labelledby="chatLab")
+                    li | In process of development
     section.container
     div(ng-view)
 

@@ -3,7 +3,7 @@ app.factory('identity', function($window, UsersResource){
     if($window.bootstrappedUserObject){
         user = new UsersResource();
         angular.extend(user,$window.bootstrappedUserObject);
-    }
+    };
 
     return {
         currentUser: user,
