@@ -65,14 +65,11 @@ app.config(function($routeProvider, $locationProvider){
             controller: 'LinkerCtrl',
             resolve: routeUserChecks.authenticated
         })
-<<<<<<< HEAD
         .when('/support', {
             templateUrl: '/partials/account/support',
             controller: 'SupportCtrl',
             resolve: routeUserChecks.authenticated
         })
-=======
->>>>>>> 15bfa13cd82dd59ed0ede41906c8acd133eb75c8
 });
 
 app.run(function($rootScope, $location){
