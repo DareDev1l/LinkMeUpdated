@@ -17,11 +17,18 @@ block main-content
                     li(ng-show="identity.isAuthenticated()")
                         a(href="#/linker") Linker
                     li(ng-show="identity.isAuthenticated()")
+                        a(href="#/chat") Chat
+                    li(ng-show="identity.isAuthenticated()")
                         a(href="#/support") Support
                 div(ng-include="'partials/account/login'")
-                button.chat.dropdown-toggle(ng-show="identity.isAuthenticated()", data-toggle='dropdown', id="chatLab") Chat
-                ul.dropdown-menu(aria-labelledby="chatLab")
-                    li | In process of development
+                .chatTab(ng-controller="ChatTabCtrl")
+                    button.chat.dropdown-toggle(ng-show="identity.isAuthenticated()", data-toggle='dropdown', id="chatLab") Chat
+                    ul.dropdown-menu.chatList(aria-labelledby="chatLab")
+                        li(ng-repeat="user in chatUsers")
+                            .allPeople
+                                img(src="{{user.profilePic}}" width="25px" height="25px")
+                                h4.chatNames {{ user.firstName }} {{ user.lastName }}
+
     section.container
     div(ng-view)
 
