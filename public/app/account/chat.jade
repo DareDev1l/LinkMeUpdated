@@ -5,7 +5,7 @@
 script(src='/socket.io/socket.io.js')
 script.
     var messages = [];
-    var socket = io.connect('http://linkmenet.herokuapp.com/#/chat');
+    var socket = io.connect('http://localhost:3030/#/chat');
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
@@ -15,9 +15,9 @@ script.
             messages.push(data.message);
             var html = '';
             for(var i=0; i<messages.length; i++) {
-                html += messages[i] + '<br />';
+                html +=  messages[i] + '<br />';
             }
-            $('#content').prepend(html);
+            content.innerHTML = html;
         } else {
             console.log("There is a problem:", data);
         }
