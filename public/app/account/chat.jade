@@ -4,8 +4,13 @@
     input#send(type='button', value='send')
 script(src='/socket.io/socket.io.js')
 script.
+    $("#field").keyup(function(e) {
+        if(e.keyCode == 13) {
+            sendMessage();
+        }
+    });
     var messages = [];
-    var socket = io.connect('http://linkmenet.herokuapp.com/#/chat');
+    var socket = io.connect('linkmenet.herokuapp.com/#/chat');
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
@@ -15,13 +20,15 @@ script.
             var html = '';
             for(var i=0; i<messages.length; i++) {
                 html +=  messages[i] + '<br />';
+
             }
             content.innerHTML = html;
+            content.scrollTop = content.scrollHeight;
         } else {
             console.log("There is a problem:", data);
         }
     });
-        sendButton.onclick = function() {
+        sendButton.onclick = sendMessage = function() {
         var text = field.value;
         socket.emit('send', { message: text });
         field.value = '';
