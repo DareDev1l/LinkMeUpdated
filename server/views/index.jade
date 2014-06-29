@@ -13,12 +13,6 @@ block main-content
                     li(ng-show="identity.isAuthenticated()")
                         a(href="#/courses") Articles
                     li(ng-show="identity.isAuthenticated()")
-                        a(href="#/users") People
-                    li(ng-show="identity.isAuthenticated()")
-                        a(href="#/linker") Linker
-                    li(ng-show="identity.isAuthenticated()")
-                        a(href="#/chat") Chat
-                    li(ng-show="identity.isAuthenticated()")
                         a(href="#/support") Support
                 div(ng-include="'partials/account/login'")
                 .chatTab(ng-controller="ChatTabCtrl")
@@ -28,6 +22,16 @@ block main-content
                             .allPeople
                                 img(src="{{user.profilePic}}" width="25px" height="25px")
                                 h4.chatNames {{ user.firstName }} {{ user.lastName }}
+    .leftNavbar.nav.navbar-fixed-left.navbar-default.navbar-collapse.collapse
+        ul.nav.navbar-nav
+            li
+                a.glyphicon.glyphicon-home.icon(href="#/")
+            li
+                a.glyphicon.glyphicon-user.icon(href="#/users")
+            li
+                a.glyphicon.glyphicon-globe.icon(href="#/linker")
+            li
+                a.glyphicon.glyphicon-envelope.icon(href="#/chat")
 
     section.container
     div(ng-view)

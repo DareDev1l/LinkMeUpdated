@@ -10,17 +10,19 @@ script.
         }
     });
     var messages = [];
-    var socket = io.connect('linkmenet.herokuapp.com/#/chat');
+    var socket = io.connect('localhost:3030/#/chat');
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
+    var fullName = document.getElementById('profileData').innerHTML;
+    console.log(fullName.innerHTML);
         socket.on('message', function (data) {
         if(data.message) {
             messages.push(data.message);
             var html = '';
             for(var i=0; i<messages.length; i++) {
+                html += fullName + ' : ';
                 html +=  messages[i] + '<br />';
-
             }
             content.innerHTML = html;
             content.scrollTop = content.scrollHeight;

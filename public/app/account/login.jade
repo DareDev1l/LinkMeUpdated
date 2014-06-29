@@ -10,7 +10,7 @@
         ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
             li.dropdown
                 a.dropdown-toggle(href="", data-toggle="dropdown")
-                    | {{ identity.currentUser.firstName + ' ' + identity.currentUser.lastName }}
+                    #profileData {{ identity.currentUser.firstName + ' ' + identity.currentUser.lastName }}
                     span.caret
                 ul.dropdown-menu
                     li(ng-show="identity.isAuthenticated()")

@@ -1,3 +1,3 @@
-app.controller('ChatCtrl', function($scope){
-
+app.controller('ChatCtrl', function($scope, identity){
+    $scope.identity = identity;
 });
