@@ -21,7 +21,7 @@ block main-content
                         li(ng-repeat="user in chatUsers")
                             .allPeople
                                 img(src="{{user.profilePic}}" width="25px" height="25px")
-                                h4.chatNames {{ user.firstName }} {{ user.lastName }}
+                                h4.chatNames(href="#/users/{{ user._id }}") {{ user.firstName }} {{ user.lastName }}
     .leftNavbar.nav.navbar-fixed-left.navbar-default.navbar-collapse.collapse
         ul.nav.navbar-nav
             li
