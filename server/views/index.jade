@@ -7,13 +7,13 @@ block main-content
                     span.icon-bar
                     span.icon-bar
                     span.icon-bar
-                a.navbar-brand(href="#/") LinkMe
+                a.navbar-brand#white(href="#/") LinkMe
             .navbar-collapse.collapse
                 ul.nav.navbar-nav
                     li(ng-show="identity.isAuthenticated()")
-                        a(href="#/courses") Articles
-                    li(ng-show="identity.isAuthenticated()")
-                        a(href="#/support") Support
+                        a#white(href="#/courses") Articles
+                    li#white(ng-show="identity.isAuthenticated()")
+                        a#white(href="#/support") Support
                 div(ng-include="'partials/account/login'")
                 .chatTab(ng-controller="ChatTabCtrl")
                     button.chat.dropdown-toggle(ng-show="identity.isAuthenticated()", data-toggle='dropdown', id="chatLab") Chat
@@ -25,13 +25,16 @@ block main-content
     .leftNavbar.nav.navbar-fixed-left.navbar-default.navbar-collapse.collapse
         ul.nav.navbar-nav
             li
-                a.glyphicon.glyphicon-home.icon(href="#/")
+                a.glyphicon.glyphicon-home.icon#white(href="#/" , title="Home")
             li
-                a.glyphicon.glyphicon-user.icon(href="#/users")
+                a.glyphicon.glyphicon-user.icon#white(href="#/users", title="People")
             li
-                a.glyphicon.glyphicon-globe.icon(href="#/linker")
+                a.glyphicon.glyphicon-search.icon.expand#white(title="Search")
+                input.form-control.searchBar(type="text" placeholder="Search")
             li
-                a.glyphicon.glyphicon-envelope.icon(href="#/chat")
+                a.glyphicon.glyphicon-globe.icon#white(href="#/linker", title="Linker")
+            li
+                a.glyphicon.glyphicon-envelope.icon#white(href="#/chat", title="Chat")
 
     section.container
     div(ng-view)

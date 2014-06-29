@@ -5,6 +5,7 @@ var activitySchema = mongoose.Schema({
     firstName: {type: String, default: 'FirstName'},
     lastName: {type: String, default: 'LastName'},
     body: String,
+    links: {type: Number, default : 0},
     date: {type: Date, default: Date.now()}
 });
 

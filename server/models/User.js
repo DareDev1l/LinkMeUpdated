@@ -10,6 +10,7 @@ var userSchema = mongoose.Schema({
     firstName: {type: String, require: '{PATH} is required'},
     lastName: {type: String, require: '{PATH} is required'},
     profilePic: {type: String, default: 'imgs/default.jpg'},
+    email : String,
     bornDate: Date,
     bornPlace: String,
     livePlace: String,

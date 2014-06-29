@@ -19,7 +19,7 @@
                     select.form-control(ng-model="activity.profilePic", required)
                         option(disabled hidden value='')
                         option(value="{{ identity.currentUser.profilePic }}") {{ identity.currentUser.profilePic }}
-            a#post-btn.btn.btn-primary.pull-right(ng-click="addpost(activity)", href="/", ng-disabled="DataForm.$invalid") Link
+            a#post-btn.btn.linkBlack.pull-right(ng-click="addpost(activity)", href="/", ng-disabled="DataForm.$invalid") Link
 
         .col-md-2.noVisLater
 
@@ -29,4 +29,6 @@
                     .wrapPost
                         img.profileImg(src="{{ post.profilePic }}" , width="50px" , height="50px")
                         .profileData {{ post.firstName }} {{ post.lastName }} at {{ post.date | date: 'dd MMM h:mm'}}
+                        .divider.divideLine
                         .profileMsg {{ post.body }}
+                        .postLinks  Links : {{ post.links }}
