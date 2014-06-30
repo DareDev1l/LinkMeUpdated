@@ -1,0 +1,34 @@
+.containerLinker
+    .row
+        .col-md-4.leftPannel
+            img.profileImg(src="{{ identity.currentUser.profilePic }}" , width="50px" , height="50px")
+            .profileData {{ identity.currentUser.firstName }} {{ identity.currentUser.lastName }}
+            textarea.post-form.form-control(rows="4" , placeholder="Share to world of LinkMe", ng-model='activity.body', required)
+            .valid Validation:
+            br
+            form(name="DataForm")
+                .firstName First Name:
+                    select.form-control(ng-model="activity.firstName" , required)
+                        option(disabled hidden value='')
+                        option(value="{{ identity.currentUser.firstName }}", name = "def") {{ identity.currentUser.firstName }}
+                .lastName Last Name:
+                    select.form-control(ng-model="activity.lastName", required)
+                        option(disabled hidden value='')
+                        option(value="{{ identity.currentUser.lastName }}", selected="selected") {{ identity.currentUser.lastName }}
+                .profilePic Your picture:
+                    select.form-control(ng-model="activity.profilePic", required)
+                        option(disabled hidden value='')
+                        option(value="{{ identity.currentUser.profilePic }}") {{ identity.currentUser.profilePic }}
+            a#post-btn.btn.linkBlack.pull-right(ng-click="addpost(activity)", href="/", ng-disabled="DataForm.$invalid") Link
+
+        .col-md-2.noVisLater
+
+        .col-md-5.rightPannel
+            ul.noListStyle
+                li(ng-repeat="post in activity | orderBy: '-_id'")
+                    .wrapPost
+                        img.profileImg(src="{{ post.profilePic }}" , width="50px" , height="50px")
+                        .profileData {{ post.firstName }} {{ post.lastName }} at {{ post.date | date: 'dd MMM h:mm'}}
+                        .divider.divideLine
+                        .profileMsg {{ post.body }}
+                        .postLinks  Links : {{ post.links }}

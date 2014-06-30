@@ -1,0 +1,27 @@
+.containerPeople
+    .row
+        .col-md-2
+            img.fixedSizePic(src='{{ user.profilePic }}', width="180px", height="210px")
+            #userNames {{user.firstName}} {{user.lastName}}
+            br
+            br
+            .panel.panel-primary.friendsBlock
+                .panel-heading.text-center Friends
+                .panel-body
+
+        .col-md-5.infoBlock
+            .panel.panel-primary
+                .panel-heading.text-center Personal Information
+                .panel-body
+                    .bornDate Born:
+                        | {{ user.bornDate | date }} in {{ user.bornPlace }}
+                    .livePlace Lives in:
+                        | {{ user.livePlace }}
+                    .job Job:
+                        | {{ user.job }}
+
+
+        .col-md-4.photosBlock
+            .panel.panel-info
+                .panel-heading.text-center Photos
+                .panel-body

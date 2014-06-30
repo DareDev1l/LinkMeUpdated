@@ -1,0 +1,37 @@
+.container
+    #content(style='width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;')
+    input#field(style='width:350px;')
+    a.btn.linkBlack#send(style="margin-left='5px';") Send
+script(src='/socket.io/socket.io.js')
+script.
+    $("#field").keyup(function(e) {
+        if(e.keyCode == 13) {
+            sendMessage();
+        }
+    });
+    var messages = [];
+    var socket = io.connect('linkmenet.herokuapp.com/#/chat');
+    var field = document.getElementById("field");
+    var sendButton = document.getElementById("send");
+    var content = document.getElementById("content");
+    var fullName = document.getElementById('profileData').innerHTML;
+    console.log(fullName.innerHTML);
+        socket.on('message', function (data) {
+        if(data.message) {
+            messages.push(data.message);
+            var html = '';
+            for(var i=0; i<messages.length; i++) {
+                html += fullName + ' : ';
+                html +=  messages[i] + '<br />';
+            }
+            content.innerHTML = html;
+            content.scrollTop = content.scrollHeight;
+        } else {
+            console.log("There is a problem:", data);
+        }
+    });
+        sendButton.onclick = sendMessage = function() {
+        var text = field.value;
+        socket.emit('send', { message: text });
+        field.value = '';
+    };

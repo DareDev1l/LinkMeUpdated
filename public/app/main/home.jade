@@ -1,0 +1,13 @@
+.container
+    .jumbotron
+        h1 LinkMe
+        h2 Social Network
+    .row
+        .col-md-6
+            .panel.panel-primary
+                .panel-heading.text-center.linkBlack Featured
+                .panel-body(ng-include="'partials/main/featured-courses'")
+        .col-md-6
+            .panel.panel-primary
+                .panel-heading.text-center.linkBlack New
+                .panel-body(ng-include="'partials/main/new-courses'")

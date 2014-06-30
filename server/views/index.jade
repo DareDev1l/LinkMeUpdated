@@ -1,0 +1,44 @@
+extends includes/layout
+block main-content
+    header.nav.navbar-inverse.navbar-fixed-top.navbar-default(ng-controller="NavbarCtrl")
+        .container
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand#white(href="#/") LinkMe
+            .navbar-collapse.collapse
+                ul.nav.navbar-nav
+                    li(ng-show="identity.isAuthenticated()")
+                        a#white(href="#/courses") Articles
+                    li#white(ng-show="identity.isAuthenticated()")
+                        a#white(href="#/support") Support
+                div(ng-include="'partials/account/login'")
+                .chatTab(ng-controller="ChatTabCtrl")
+                    button.chat.dropdown-toggle(ng-show="identity.isAuthenticated()", data-toggle='dropdown', id="chatLab") Chat
+                    ul.dropdown-menu.chatList(aria-labelledby="chatLab")
+                        li(ng-repeat="user in chatUsers")
+                            .allPeople
+                                img(src="{{user.profilePic}}" width="25px" height="25px")
+                                h4.chatNames(href="#/users/{{ user._id }}") {{ user.firstName }} {{ user.lastName }}
+    .leftNavbar.nav.navbar-fixed-left.navbar-default.navbar-collapse.collapse
+        ul.nav.navbar-nav
+            li
+                a.glyphicon.glyphicon-home.icon#white(href="#/" , title="Home")
+            li
+                a.glyphicon.glyphicon-user.icon#white(href="#/users", title="People")
+            li
+                a.glyphicon.glyphicon-search.icon.expand#white(title="Search")
+                input.form-control.searchBar(type="text" placeholder="Search")
+            li
+                a.glyphicon.glyphicon-globe.icon#white(href="#/linker", title="Linker")
+            li
+                a.glyphicon.glyphicon-envelope.icon#white(href="#/chat", title="Chat")
+
+    section.container
+    div(ng-view)
+
+    //footer
+        p.text-center
+            | LinkMe 2014

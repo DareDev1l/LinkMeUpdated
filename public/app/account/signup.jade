@@ -1,0 +1,48 @@
+.container
+    .bodyREG
+        form.form-horizontal(name="signUpForm")
+            fieldset
+                legend Register an account
+                .form-group
+                    label.col-md-2.control-label(for="first-name") First Name *
+                    .col-md-10
+                        input.form-control(type="text", placeholder="First Name", ng-model="user.firstName", required)
+                .form-group
+                    label.col-md-2.control-label(for="last-name" ) Last Name *
+                    .col-md-10
+                        input.form-control(type="text", placeholder="Last Name", ng-model="user.lastName", required)
+                .form-group
+                    label.col-md-2.control-label(for="username") Username *
+                    .col-md-10
+                        input.form-control(type="text", placeholder="Username", ng-model="user.username", required)
+                .form-group
+                    label.col-md-2.control-label(for="email") E-mail *
+                    .col-md-10
+                        input.form-control(type="email", placeholder="Username", ng-model="user.email", required)
+                .form-group
+                    label.col-md-2.control-label(for="password") Password *
+                    .col-md-10
+                        input.form-control(type="password", placeholder="Password", ng-model="user.password", required)
+                .form-group
+                    label.col-md-2.control-label(for="profilePic") Picture
+                    .col-md-10
+                        input.form-control(type="text", placeholder="Place URL Here (optional)", ng-model="user.profilePic")
+                .form-group
+                    label.col-md-2.control-label(for="bornDate") Date of birth
+                    .col-md-10
+                        input.form-control(type="text", placeholder="mm/dd/yyyy", ng-model="user.bornDate")
+                .form-group
+                    label.col-md-2.control-label(for="bornPlace") Place of birth
+                    .col-md-10
+                        input.form-control(type="text", ng-model="user.bornPlace", placeholder="Where are you born?")
+                .form-group
+                    label.col-md-2.control-label(for="job") Working as
+                    .col-md-10
+                        input.form-control(type="text", placeholder="Your job", ng-model="user.job")
+                .form-group
+                    label.col-md-2.control-label(for="livePlace") Lives in
+                    .col-md-10
+                        input.form-control(type="text", placeholder="Where do you live?", ng-model="user.livePlace")
+                .pull-right
+                    button.btn.linkBlack(ng-click="signup(user)", ng-disabled="signUpForm.$invalid") Register
+                    a.btn.linkBlack#cancel(href="#/") Cancel
