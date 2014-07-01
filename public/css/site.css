@@ -7,6 +7,8 @@ span {
 }
 body {
   padding-top: 60px;
+  background: #e8e8e8;
+  font-family: Halvetica, arial, sans-serif;
 }
 .navbar-right .navbar-form input {
   margin-right: 10px;
@@ -287,4 +289,91 @@ ul li {
 }
 .tabs:hover {
   background-color: #e8e8e8;
+}
+.bodyREG {
+  background-image: url("../imgs/back_5.png");
+  margin-top: 12px;
+  width: 100%;
+  height: 789px;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  padding: 9px;
+}
+label {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.avail {
+  max-width: 99%;
+}
+.myWell {
+  width: 100%;
+  height: 24px;
+  border-bottom: 1px solid #d0d0d0;
+}
+.form-horizontal {
+  margin-top: 24px;
+}
+.form-group {
+  margin-right: -15px;
+  margin-left: 15px;
+}
+.yfname:focus {
+  border-color: #47ff47;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px #47ff47, 0 0 8px #4dff4d;
+  box-shadow: inset 0 1px 1px #47ff47, 0 0 8px #4dff4d;
+}
+.ylname:focus {
+  border-color: #f6f;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px #f6f, 0 0 8px #ffa3ff;
+  box-shadow: inset 0 1px 1px #f6f, 0 0 8px #ffa3ff;
+}
+.yuname:focus {
+  border-color: #e6b8b8;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px #e6b8b8, 0 0 18px #ffd1d1;
+  box-shadow: inset 0 1px 1px #e6b8b8, 0 0 18px #ffd1d1;
+}
+.ypass:focus {
+  border-color: #005ce6;
+  outline: 0;
+  opacity: 0.5;
+  -webkit-box-shadow: inset 0 1px 1px #005ce6, 0 0 8px #3385ff;
+  box-shadow: inset 0 1px 1px #005ce6, 0 0 8px #3385ff;
+}
+.ycpass:focus {
+  border-color: #3cf;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px #3cf, 0 0 8px #70dbff;
+  box-shadow: inset 0 1px 1px #3cf, 0 0 8px #70dbff;
+}
+.yPicture:focus {
+  border-color: #999;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px #999, 0 0 8px #a3a3a3;
+  box-shadow: inset 0 1px 1px #999, 0 0 8px #a3a3a3;
+}
+.yDate:focus {
+  border-color: #ff0;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px #ff0, 0 0 8px #ffff4d;
+  box-shadow: inset 0 1px 1px #ff0, 0 0 8px #ffff4d;
+}
+.yJob:focus {
+  border-color: #ff4d4d;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px #ff4d4d, 0 0 8px #ff8080;
+  box-shadow: inset 0 1px 1px #ff4d4d, 0 0 8px #ff8080;
+}
+.ylPlace:focus {
+  border-color: #9fc;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px #9fc, 0 0 8px #adffd6;
+  box-shadow: inset 0 1px 1px #9fc, 0 0 8px #adffd6;
 }
