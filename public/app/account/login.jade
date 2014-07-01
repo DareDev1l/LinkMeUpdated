@@ -3,8 +3,10 @@
         .form-group
             input.form-control(type="text" placeholder="Username" ng-model="user.username")
             input.form-control(type="password" placeholder="Password" ng-model="user.password")
-            button.btn.btn-primary(ng-click="login(user)") Login
-            a.btn.btn-primary(href="#/signup") Sign Up
+            button(type="button" class="button blue center" ng-click="login(user)") Login
+            a(href="#/signup" style=" text-decoration: none;")
+                button(type"button" class="button green center") Sign Up
+
     #userInfo
         img#userImg(src="{{ identity.currentUser.profilePic }}" , ng-show="identity.isAuthenticated()")
         ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
