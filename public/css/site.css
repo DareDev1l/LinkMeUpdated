@@ -7,6 +7,7 @@ span {
 }
 body {
   padding-top: 60px;
+<<<<<<< HEAD
   background: #e8e8e8;
   font-family: Halvetica, arial, sans-serif;
 }
@@ -16,6 +17,13 @@ body {
 }
 .navbar-right a.btn,
 .navbar-form a.btn {
+=======
+}
+.navbar-right .navbar-form input {
+  margin-right: 10px;
+}
+.navbar-right .navbar-form a.btn {
+>>>>>>> 4e5938c833fa63fc291b3837b6908232e6071302
   margin-left: 10px;
 }
 #cancel {
@@ -292,6 +300,7 @@ ul li {
 .tabs:hover {
   background-color: #e8e8e8;
 }
+<<<<<<< HEAD
 .bodyREG {
   background-image: url("../imgs/back_5.png");
   margin-top: 12px;
@@ -416,3 +425,5 @@ label {
   background: none repeat scroll 0 0 #444;
   color: #fff;
 }
+=======
+>>>>>>> 4e5938c833fa63fc291b3837b6908232e6071302
