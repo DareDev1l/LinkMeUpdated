@@ -15,7 +15,7 @@ var userSchema = mongoose.Schema({
     bornPlace: String,
     livePlace: String,
     job: String,
-    likes: [String],
+    friends: [String],
     activity: String,
     salt: String,
     hashPass: String,
